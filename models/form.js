@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 
-const formSchema = new mongoose.Schema({
+const formSchema = new mongoose.Schema({                
     address: { type: String, required: true},
     date: { type: Date, required: true},
+    typeOfEvent: {type: String, required: true},
     animal: { type: String, required: true},
     numOfAnimals: { type: Number, required: true},
     nameOfPerson: {type: String, required: true},

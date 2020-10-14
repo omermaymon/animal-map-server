@@ -9,9 +9,11 @@ formsRouter.get('/', async (request, response) => {
 
 formsRouter.post('/', async (request, response) => {
   const body = request.body  
+  console.log("this is body: ", body)
   const form = new Form({
     address: body.address,
     date: body.date,
+    typeOfEvent: body.typeOfEvent,
     animal: body.animal,
     numOfAnimals: body.numOfAnimals,
     nameOfPerson: body.nameOfPerson,
@@ -20,8 +22,8 @@ formsRouter.post('/', async (request, response) => {
     lng: body.lng,
     feederName: body.feederName,
     feederPhone: body.feederPhone,
-    sterilized: body.sterilized,
-    unsterilized: body.unsterilized
+    sterilized: body.sterilizedCats,
+    unsterilized: body.unsterilizedCats
   })
     const savedForm = await form.save()
     response.json(savedForm)
